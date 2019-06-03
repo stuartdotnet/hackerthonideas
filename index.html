@@ -1,0 +1,75 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Stuart Dobson">
+    <title>Hackathon Idea Generator</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <script>
+        var platforms = ["Alexa Skill", "javascript library", "Serverless framework", "Smart bulb", "Drone", "iPhone app", "Hololens app", "VR experience", "Smartwatch app", "Fridge app", "IoT system", "X-box app", "Car app", "Smart TV app"];
+        var verbs = ["3d prints", "organises", "records", "rates", "recommends", "does sentiment analysis on", "uses AI to search", "uses AI to rank", "finds", "tags", "customises", "photographs", "plays", "compiles"];
+        var adjectives = ["","","","","","","","","","", "newsworthy", "embarrassing", "disappointing", "overrated", "unfortunate", "Disney", "scary", "funny", "nearby", "local", "sad", "positive", "negative", "terrible", "good", "fun", "synthwave", "epic", "vegan", "keto", "vegetarian", "live", "cheap"];
+        var nouns = ["cakes", "restaurants", "tweets", "movies", "cafes", "cars", "songs", "books", "articles", "playlists", "news stories", "shops", "websites", "t-shirts", "shoes", "video games", "videos", "dinosaurs", "antiques", "vinyl", "car parks", "tradies", "craft beers", "co-working spaces", "reviews", "hotel rooms", "flights", "webcams"];
+
+        function getIdea() {
+            var ideaElement = document.getElementById('idea');
+            ideaElement.style.display = 'block';
+            var platform = platforms[Math.floor(Math.random() * platforms.length)];;
+            var verb = verbs[Math.floor(Math.random() * verbs.length)];
+            var adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+            var noun = nouns[Math.floor(Math.random() * nouns.length)];
+            var ideaText = "How about a " + "<strong>" + platform + "</strong> that <strong>" + verb + " " + adj + " " + noun + "</strong>";
+            ideaElement.innerHTML = ideaText;
+        }   
+    </script>
+
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">Hackathon Idea Generator</h3>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <p class="lead">Need an idea?</p>
+    <p class="lead">
+      <button class="btn btn-lg btn-secondary" onclick="getIdea()">Get Inspiration</button>
+    </p>
+    <div class="jumbotron" id="idea" style="display:none;"></div>
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>by <a href="https://twitter.com/stuartdotnet">@stuartdotnet</a>. Special Thanks to Brendan and Jesse</p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
